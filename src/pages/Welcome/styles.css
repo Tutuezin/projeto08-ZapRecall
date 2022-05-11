@@ -1,0 +1,31 @@
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome img {
+  margin-top: 148px;
+}
+
+.welcome h1 {
+  margin-top: 20px;
+  font-family: "Righteous", cursive;
+  font-size: 36px;
+  color: #fff;
+}
+
+.welcome button {
+  cursor: pointer;
+  font-family: "Recursive", sans-serif;
+  font-size: 18px;
+  color: #d70900;
+  background-color: #fff;
+  margin-top: 35px;
+  width: 246px;
+  height: 54px;
+  border-radius: 5px;
+  border: 1px solid #d70900;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
