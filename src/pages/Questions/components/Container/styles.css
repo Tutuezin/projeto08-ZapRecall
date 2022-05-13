@@ -46,3 +46,28 @@
   cursor: pointer;
   margin-top: 10.5rem;
 }
+
+.closedQuestion.finished img {
+  cursor: default;
+}
+
+.through,
+.correct,
+.wrong,
+.soso {
+  text-decoration: line-through;
+}
+
+.correct {
+  color: #2fbe34;
+}
+
+.wrong {
+  color: #ff3030;
+}
+
+.soso {
+  color: #ff922e;
+}
+
+.through: ;
