@@ -1,0 +1,48 @@
+.container,
+.closedQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.closedQuestion,
+.openedQuestion {
+  font-family: "Recursive", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333333;
+
+  width: 30rem;
+  height: 6.5rem;
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+  margin-bottom: 2.5rem;
+
+  background-color: #fff;
+}
+
+.closedQuestion img {
+  cursor: pointer;
+}
+
+.openedQuestion {
+  display: flex;
+  justify-content: space-between;
+  height: 13.1rem;
+  background-color: #ffffd4;
+}
+
+.openedQuestion h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 1.8rem 0 0 1.5rem;
+}
+
+.openedQuestion img {
+  cursor: pointer;
+  margin-top: 10.5rem;
+}
