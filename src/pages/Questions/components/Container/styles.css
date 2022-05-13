@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.closedQuestion.finished h3 {
+  margin-bottom: 0rem;
+}
+
 .closedQuestion,
 .openedQuestion {
   font-family: "Recursive", sans-serif;
@@ -16,11 +20,12 @@
   font-weight: 700;
   color: #333333;
 
+  margin-bottom: 2.5rem;
+
   width: 30rem;
-  height: 6.5rem;
+  min-height: 6.5rem;
   border-radius: 0.5rem;
   padding: 0 1.5rem;
-  margin-bottom: 2.5rem;
 
   background-color: #fff;
 }
@@ -32,14 +37,14 @@
 .openedQuestion {
   display: flex;
   justify-content: space-between;
-  height: 13.1rem;
+
   background-color: #ffffd4;
+  padding: 1.8rem;
 }
 
 .openedQuestion h3 {
   font-size: 18px;
   font-weight: 400;
-  margin: 1.8rem 0 0 1.5rem;
 }
 
 .openedQuestion img {
@@ -51,10 +56,7 @@
   cursor: default;
 }
 
-.through,
-.correct,
-.wrong,
-.soso {
+.through {
   text-decoration: line-through;
 }
 
@@ -62,12 +64,53 @@
   color: #2fbe34;
 }
 
-.wrong {
-  color: #ff3030;
-}
-
 .soso {
   color: #ff922e;
 }
 
-.through: ;
+.wrong {
+  color: #ff3030;
+}
+
+.zap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.zip {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.zip,
+.zip > h4 {
+  font-family: "Recursive", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zip h4 {
+  border-radius: 0.5rem;
+  width: 8rem;
+  height: 3.7rem;
+
+  color: #fff;
+}
+.buttonCorrect {
+  text-align: center;
+  background-color: #2fbe34;
+}
+
+.buttonSoso {
+  text-align: center;
+  background-color: #ff922e;
+}
+
+.buttonWrong {
+  text-align: center;
+  background-color: #ff3030;
+}
