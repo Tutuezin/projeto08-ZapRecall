@@ -4,6 +4,7 @@ footer {
   align-items: center;
   flex-direction: column;
   height: 7rem;
+  gap: 0.6rem;
 
   position: fixed;
   width: 100%;
@@ -20,4 +21,9 @@ footer h3 {
   font-size: 1.8rem;
   font-weight: 400;
   color: #333333;
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
 }

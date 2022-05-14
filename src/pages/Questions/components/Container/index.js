@@ -5,6 +5,7 @@ import turn from "../../../../assets/img/turn.svg";
 import correct from "../../../../assets/img/correct.svg";
 import soso from "../../../../assets/img/soso.svg";
 import wrong from "../../../../assets/img/wrong.svg";
+import Footer from "../Footer";
 
 function Question({ title, alt, question, answer }) {
   const [classQuestion, setClassQuestion] = useState("closedQuestion");
