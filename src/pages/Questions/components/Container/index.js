@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles.css";
 import vector from "../../../../assets/img/vector.svg";
 import turn from "../../../../assets/img/turn.svg";
 import correct from "../../../../assets/img/correct.svg";
 import soso from "../../../../assets/img/soso.svg";
 import wrong from "../../../../assets/img/wrong.svg";
-import Footer from "../Footer";
 
-function Question({ title, alt, question, answer }) {
+function Question({ title, alt, question, answer, addQuestion }) {
   const [classQuestion, setClassQuestion] = useState("closedQuestion");
   const [turned, setTurned] = useState(false);
   const [finished, setFinished] = useState("");
   const [classTitle, setClassTitle] = useState("");
-
+  const [response, setResponse] = useState("")
   const ToggleQuestion = () => {
     setClassQuestion(
       classQuestion === "openedQuestion" ? "closedQuestion" : "openedQuestion"
@@ -23,15 +22,28 @@ function Question({ title, alt, question, answer }) {
     setTurned(!turned);
   };
 
+  useEffect(() => {
+    if (response) addQuestion(response)
+  }, [response])
+
   const FinishedQuestion = () => {
     switch (finished) {
       case "":
         return classQuestion === "closedQuestion" ? vector : turn;
       case "wrong":
+        setTimeout(() => {
+          setResponse("wrong")
+        }, 100);
         return wrong;
       case "soso":
+        setTimeout(() => {
+          setResponse("soso")
+        }, 100);
         return soso;
       case "correct":
+        setTimeout(() => {
+          setResponse("correct")
+        }, 100);
         return correct;
     }
   };
@@ -103,68 +115,73 @@ function Question({ title, alt, question, answer }) {
   );
 }
 
-export default function Container() {
+export default function Container({addQuestion}) {
   const closeds = [
     {
-      title: "Pergunta 1",
-      alt: "Pergunta 1",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "O que é  JSX?",
       answer: "Uma extensão de linguagem do JavaScript",
     },
     {
-      title: "Pergunta 2",
-      alt: "Pergunta 2",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "O React é __",
       answer: "uma biblioteca JavaScript para construção de interfaces",
     },
     {
-      title: "Pergunta 3",
-      alt: "Pergunta 3",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "Componentes devem iniciar com __",
       answer: "letra maiúscula",
     },
     {
-      title: "Pergunta 4",
-      alt: "Pergunta 4",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "Podemos colocar __ dentro do JSX",
       answer: "expressões",
     },
     {
-      title: "Pergunta 5",
-      alt: "Pergunta 5",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "O ReactDOM nos ajuda __",
       answer: "interagindo com a DOM para colocar componentes React na mesma",
     },
     {
-      title: "Pergunta 6",
-      alt: "Pergunta 6",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "Usamos o npm para __ ",
       answer: "gerenciar os pacotes necessários e suas dependências",
     },
     {
-      title: "Pergunta 7",
-      alt: "Pergunta 7",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "Usamos props para __",
       answer: "passar diferentes informações para componentes",
     },
     {
-      title: "Pergunta 8",
-      alt: "Pergunta 8",
+      title: "Pergunta",
+      alt: "Pergunta",
       question: "Usamos estado (state) para __",
       answer:
         "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     },
   ];
 
+  closeds.sort(() => {
+    return Math.random() - 0.5
+  })
+
   return (
     <div className="container">
       {closeds.map(({ title, alt, question, answer }, index) => (
         <Question
           key={index}
-          title={title}
+          title={title + ` ${index + 1}`}
           alt={alt}
           question={question}
           answer={answer}
+          addQuestion={addQuestion}
         />
       ))}
     </div>
